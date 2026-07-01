@@ -97,8 +97,6 @@ button{
 
     padding:14px;
 
-    margin-top:12px;
-
     background:#2563eb;
 
     color:white;
@@ -109,9 +107,11 @@ button{
 
     cursor:pointer;
 
-    font-size:16px;
+    font-size:15px;
 
-    transition:.2s;
+    font-weight:bold;
+
+    transition:.25s;
 
 }
 
@@ -141,4 +141,67 @@ hr{
 
     color:#15803d;
 
+}
+
+.formularios{
+
+    display:flex;
+
+    gap:25px;
+
+    margin-top:30px;
+
+    flex-wrap:wrap;
+
+}
+
+.card{
+
+    flex:1;
+
+    min-width:300px;
+
+    background:#f8fafc;
+
+    padding:20px;
+
+    border-radius:10px;
+
+    border:1px solid #dbeafe;
+
+}
+
+.positivo{
+
+    color:#15803d;
+
+    font-weight:bold;
+
+}
+
+.negativo{
+
+    color:#dc2626;
+
+    font-weight:bold;
+
+}
+
+#mensagem{
+
+    margin-top:25px;
+
+    padding:15px;
+
+    border-radius:8px;
+
+    text-align:center;
+
+    font-weight:bold;
+
+}
+
+table{
+    border-radius:10px;
+    overflow:hidden;
 }

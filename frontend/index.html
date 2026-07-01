@@ -37,52 +37,39 @@
 
         </table>
 
-        <hr>
+        <div class="formularios">
 
-        <h2>Realizar Saque</h2>
+            <div class="card">
 
-        <input
-            type="number"
-            id="idConta"
-            placeholder="ID da Conta"
-        >
+                <h2>💸 Saque</h2>
 
-        <input
-            type="number"
-            id="valorSaque"
-            placeholder="Valor"
-        >
+                <input type="number" id="idConta" placeholder="ID da Conta">
 
-        <button onclick="realizarSaque()">
-            Sacar
-        </button>
+                <input type="number" id="valorSaque" placeholder="Valor">
 
-        <hr>
+                <button onclick="realizarSaque()">
+                    Sacar
+                </button>
 
-        <h2>Transferência</h2>
+            </div>
 
-        <input
-            type="number"
-            id="origem"
-            placeholder="ID da Conta Origem"
-        >
+            <div class="card">
 
-        <input
-            type="number"
-            id="destino"
-            placeholder="ID da Conta Destino"
-        >
+                <h2>💳 Transferência</h2>
 
-        <input
-            type="number"
-            id="valorTransferencia"
-            placeholder="Valor"
-        >
+                <input type="number" id="origem" placeholder="ID Conta Origem">
 
-        <button onclick="realizarTransferencia()">
-            Transferir
-        </button>
+                <input type="number" id="destino" placeholder="ID Conta Destino">
 
+                <input type="number" id="valorTransferencia" placeholder="Valor">
+
+                <button onclick="realizarTransferencia()">
+                    Transferir
+                </button>
+
+            </div>
+
+        </div>
         <p id="mensagem"></p>
 
     </div>

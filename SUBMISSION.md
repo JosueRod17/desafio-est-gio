@@ -1,33 +1,83 @@
 # Minha Solução — Banco
 
-> Substitua o conteúdo entre colchetes pelas informações da sua solução.
-> Estas informações (aqui ou no README do seu fork) são **obrigatórias**.
-
 ## Stack
-- **Backend:** [linguagem e versão — ex.: Node.js 20 / Python 3.11 / Go 1.22] (deve estar no pool aceito)
-- **Frontend:** [ex.: HTML/CSS/JS puro / React / Vue]
+- **Backend:** Python 3.14 + FastAPI
+- **Frontend:** HTML5, CSS3 e JavaScript puro
 
 ## Pré-requisitos / dependências
-- [o que precisa estar instalado e como instalar — ex.: `npm install`, `pip install -r requirements.txt`]
+**Backend** 
+- Entre na pasta `backend:`
+
+```bash
+cd backend
+```
+
+- Instale as dependências:
+
+```bash
+py -m pip install -r requirements.txt
+```
 
 ## Como executar
 
 ### Backend (API)
+
+Entre na pasta `backend:`
+
 ```bash
-# [comando(s) para subir o backend]
-# ex.: npm run start  →  API em http://localhost:3000
+cd backend
+```
+
+Execute a API:
+```bash
+py -m uvicorn app.main:app --reload
+```
+
+A API ficará disponível em:
+
+```
+http://127.0.0.1:8000
+```
+Documentação Swagger:
+
+```
+http://127.0.0.1:8000/docs
 ```
 
 ### Frontend
+Abra um terminal na pasta `frontend` e execute:
+
 ```bash
-# [comando(s) para subir o frontend]
-# ex.: abrir index.html  /  npm run dev  →  http://localhost:5173
+cd frontend
+py -m http.server 5500
 ```
+Depois acesse:
+
+```
+http://localhost:5500
+```
+OBS: Certifique-se de que o backend esteja em execução antes de abrir o frontend.
 
 ## Exemplo de uso
 ```
-[descreva um fluxo: ex. fazer um saque na tela e o resultado retornado pela API]
+1. Execute o backend.
+
+2. Execute o frontend.
+
+3. Clique em "Atualizar Contas" para visualizar as contas disponíveis.
+
+4. Para realizar um saque, informe o ID da conta e o valor desejado e clique em Sacar.
+
+5. Para realizar uma transferência, informe a conta de origem, a conta de destino e o valor, depois clique em Transferir.
+
+6. Após cada operação, a tabela de contas é atualizada automaticamente.
 ```
 
 ## Observações (opcional)
-- [decisões de modelagem, itens de bônus implementados, limitações conhecidas, etc.]
+- A aplicação foi organizada em camadas (```dados```, ``modelos``, ``esquemas``, ``servicos`` e ``rotas``) para separar responsabilidades.
+
+- As regras de negócio foram implementadas no backend.
+
+- Além da operação obrigatória de saque, foi implementada a funcionalidade de transferência entre contas como diferencial.
+
+- A interface web consome a API utilizando JavaScript puro (``fetch``).

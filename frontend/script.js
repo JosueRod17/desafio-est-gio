@@ -15,12 +15,11 @@ async function carregarContas() {
         tabela.innerHTML += `
             <tr>
                 <td>${conta.id}</td>
-                <td>${conta.titular}</td>
+                <td><strong>${conta.titular}</strong></td>
                 <td>${conta.tipo}</td>
-                <td>${conta.saldo.toLocaleString("pt-BR", {
-                    style: "currency",
-                    currency: "BRL"
-                })}</td>
+                <td class="${conta.saldo < 0 ? 'negativo' : 'positivo'}"> ${conta.saldo.toLocaleString("pt-BR",{style:"currency",currency:"BRL"})}
+
+                </td>
             </tr>
         `;
 
@@ -57,6 +56,8 @@ async function realizarSaque() {
         mostrarMensagem("Saque realizado com sucesso!", false);
 
         carregarContas();
+        document.getElementById("idConta").value = "";
+        document.getElementById("valorSaque").value = "";
 
     } else {
 
@@ -99,6 +100,9 @@ async function realizarTransferencia() {
         mostrarMensagem("Transferência realizada com sucesso!", false);
 
         carregarContas();
+        document.getElementById("origem").value = "";
+        document.getElementById("destino").value = "";
+        document.getElementById("valorTransferencia").value = "";
 
     } else {
 

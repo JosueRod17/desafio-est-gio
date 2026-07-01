@@ -1,61 +1,102 @@
-# Desafio Técnico — Banco 🏦
+# BANCO AGILIZE
 
-Bem-vindo(a) ao desafio técnico do **Processo Seletivo Agilize — Estágio em Tecnologia**!
+Projeto desenvolvido como solução para o desafio técnico do processo seletivo de **Estágio em Tecnologia da Agilize**.
 
-Este desafio avalia sua capacidade de transformar **regras de negócio** em um sistema **fullstack**
-funcional, bem organizado e fácil de executar.
+## Sobre o projeto
 
-> 📄 **A especificação completa está no arquivo [`ESPECIFICACAO.pdf`](./ESPECIFICACAO.pdf).** Leia-a com atenção antes de começar.
->
-> ⏰ **Prazo:** 2 dias corridos — entrega até **00h de 30/06**.
+O sistema simula operações bancárias entre contas correntes e poupança, respeitando as regras de negócio propostas no desafio.
 
----
+A aplicação é dividida em duas partes:
 
-## 🎯 Resumo
+* **Backend:** API desenvolvida com Python e FastAPI.
+* **Frontend:** Interface web desenvolvida com HTML, CSS e JavaScript puro, consumindo a API.
 
-Construa um **Banco** sobre dois tipos de conta (corrente e poupança), respeitando as regras de negócio
-da especificação. A operação **obrigatória** é o **saque**; a **transferência** é **opcional** e conta
-como diferencial.
+## Tecnologias utilizadas
 
-A solução deve ter **duas partes que se comunicam**:
+### Backend
 
-- **Backend (API):** expõe uma API HTTP com as operações (toda a regra de negócio fica aqui).
-- **Frontend:** uma interface web que consome a API e permite realizar as operações e ver os resultados.
+* Python 3
+* FastAPI
+* Uvicorn
+* Pydantic
 
-## 💻 Linguagens aceitas (backend)
+### Frontend
 
-`JavaScript (Node.js)` · `TypeScript (Node.js)` · `Python` · `Ruby` · `PHP` · `Go`
+* HTML5
+* CSS3
+* JavaScript
 
-> O **frontend** pode usar HTML/CSS/JavaScript, com ou sem framework.
+## Funcionalidades
 
----
+* Listagem de contas
+* Saque
+* Transferência entre contas
+* Atualização automática da tabela de contas
+* Validação das regras de negócio
 
-## 🚀 Como participar
+## Estrutura do projeto
 
-1. Faça um **fork** deste repositório.
-2. Implemente **backend** e **frontend** no fork (backend em uma das linguagens aceitas).
-3. **Preencha o README** do seu fork seguindo o modelo em [`SUBMISSION.md`](./SUBMISSION.md)
-   (linguagem, pré-requisitos e **passo a passo para subir backend e frontend**).
-4. Faça **commits ao longo do desenvolvimento** — evite um único commit gigante no final.
-5. Envie o **link do seu fork** para **calison@agilize.com.br**.
+```text
+backend/
+    app/
+        dados.py
+        esquemas.py
+        main.py
+        modelos.py
+        rotas.py
+        servicos.py
 
----
+frontend/
+    index.html
+    style.css
+    script.js
+```
 
-## ⚠️ Critério eliminatório
+## ▶ Como executar
 
-> Projetos que **não executarem** seguindo o README — ou cujo README não permita rodar **backend e
-> frontend** — serão **eliminados**. Backend fora das linguagens aceitas também elimina.
->
-> **Teste o passo a passo em uma máquina/pasta limpa antes de enviar.**
+### Backend
 
----
+Entre na pasta do backend:
 
-## ✅ O que será avaliado
+```bash
+cd backend
+```
 
-- **Funcionamento** — backend e frontend rodam, se comunicam e cumprem as regras de negócio.
-- **Qualidade do código** — clareza, organização, separação de responsabilidades, sem duplicação.
-- **Processo** — histórico de commits coerente e README claro.
+Instale as dependências:
 
-Dúvidas: **calison@agilize.com.br**
+```bash
+py -m pip install -r requirements.txt
+```
 
-Boa sorte! 🍀
+Execute a API:
+
+```bash
+py -m uvicorn app.main:app --reload
+```
+
+A documentação da API estará disponível em:
+
+```text
+http://127.0.0.1:8000/docs
+```
+
+### Frontend
+
+Abra o arquivo:
+
+```text
+frontend/index.html
+```
+
+em seu navegador.
+
+## Regras implementadas
+
+* Conta corrente possui tarifa de R$ 1,00 por operação.
+* Conta corrente pode utilizar cheque especial até R$ 500,00 negativos.
+* Conta poupança não possui tarifa.
+* Conta poupança não pode ficar com saldo negativo.
+
+## Autor
+
+Josué Rodrigues da Silva
