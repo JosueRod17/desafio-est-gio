@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco Agilize</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>BANCO AGILIZE</h1>
+        <p class="subtitulo">
+            Sistema de Operações Bancárias
+        </p>
+
+        <button onclick="carregarContas()">
+            Atualizar Contas
+        </button>
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Titular</th>
+                    <th>Tipo</th>
+                    <th>Saldo</th>
+                </tr>
+            </thead>
+
+            <tbody id="lista-contas">
+
+            </tbody>
+
+        </table>
+
+        <hr>
+
+        <h2>Realizar Saque</h2>
+
+        <input
+            type="number"
+            id="idConta"
+            placeholder="ID da Conta"
+        >
+
+        <input
+            type="number"
+            id="valorSaque"
+            placeholder="Valor"
+        >
+
+        <button onclick="realizarSaque()">
+            Sacar
+        </button>
+
+        <hr>
+
+        <h2>Transferência</h2>
+
+        <input
+            type="number"
+            id="origem"
+            placeholder="ID da Conta Origem"
+        >
+
+        <input
+            type="number"
+            id="destino"
+            placeholder="ID da Conta Destino"
+        >
+
+        <input
+            type="number"
+            id="valorTransferencia"
+            placeholder="Valor"
+        >
+
+        <button onclick="realizarTransferencia()">
+            Transferir
+        </button>
+
+        <p id="mensagem"></p>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
